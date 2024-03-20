@@ -1,0 +1,80 @@
+#include <16f877.h>
+#device ADC = 10
+#FUSES XT, NOWDT
+#use delay(clock=20M)
+#use standard_io(D)
+#BYTE OPTION_REG = 0x81
+#define LCD_DB4   PIN_D4         
+#define LCD_DB5   PIN_D5
+#define LCD_DB6   PIN_D6
+#define LCD_DB7   PIN_D7
+#define LCD_RS    PIN_D2
+#define LCD_E     PIN_D3
+
+
+#include <lcd.c>            
+
+float valor_adc;
+float valor_peso;
+
+#INT_EXT
+
+void ext_isr() {
+	
+	while (TRUE){
+		output_low(PIN_B2);
+		output_high(PIN_B3);
+		setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); // Setup timer1 with prescaler=8
+		set_timer1(15536); // Load timer for 400ms delay
+		enable_interrupts(INT_TIMER1); // Enable timer1 interrupt
+	}
+
+
+
+}
+
+#INT_TIMER1
+void timer1_isr() {
+	
+	set_timer1(15536); // Reset timer to get 400ms delay
+	
+	valor_adc = read_adc();
+	
+	
+	
+	
+
+	
+	if(valor_adc >= 700) {
+		disable_interrupts(INT_TIMER1); // Stop the timer
+		
+	}
+	*/
+}
+
+
+
+
+void main()
+{	
+	bit_clear(OPTION_REG, 7);     
+	enable_interrupts(int_ext);   
+	ext_int_edge(H_to_L);       
+	enable_interrupts(GLOBAL);   
+	setup_adc_ports(ALL_ANALOG);
+	setup_adc(ADC_CLOCK_INTERNAL);
+	set_adc_channel(0);
+	lcd_init();
+		//lcd_gotoxy(1,1);
+	output_low(PIN_B3);
+	
+	//printf(lcd_putc"asdasdadad");
+
+
+   while(TRUE)
+   {
+      output_high(PIN_B2);
+	   // empieza la estera en bucle
+   }
+
+}

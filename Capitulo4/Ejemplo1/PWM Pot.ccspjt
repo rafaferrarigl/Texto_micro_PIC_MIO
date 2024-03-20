@@ -1,0 +1,19 @@
+[PROJECT]
+Target=PWM Pot.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=PWM Pot.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[PWM Pot.c]
+Type=4
+[mru-list]
+1=PWM Pot.c
+[Opened Files]
+1=PWM Pot.c
+2=
+[Units]
+Count=1
+1=PWM Pot (main)

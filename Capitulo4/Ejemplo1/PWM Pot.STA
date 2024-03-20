@@ -1,0 +1,54 @@
+
+ROM used:   960/8192 (12%)
+            960/8192 (12%) including unused fragments
+
+            1.4 Average locations per line
+            68.6 Average locations per statement
+
+RAM used:   13/368 (4%) at main() level
+            53/368 (14%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   27    12  86  PWM Pot.c
+  671     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h
+   12     2  14  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\map_function.c
+----- -----
+  710    14 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    448  47   24   167  5.5  map
+0    321  33   16             @ADDFF
+ Inline        13             @MULFF
+ Inline        14             @DIVFF
+0    123  13    4   315  2.8  MAIN
+0     31   3    2             @ITOF
+0     33   3    4             @SFTOI
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              14
+    Comments                125
+    Volume (V)              590
+    Difficulty (D)          6.8
+    Effort to implement (E) 3984
+    Time to implement (T)   4 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    94
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   956  1088  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

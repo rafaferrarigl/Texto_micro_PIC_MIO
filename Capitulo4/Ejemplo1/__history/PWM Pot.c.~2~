@@ -1,0 +1,24 @@
+#include <16f877a.h>
+#device ADC = 10
+#fuses HS,NOWDT,NOPROTECT,NOPUT,NOLVP,BROWNOUT
+#use delay(clock=20M)
+
+long valor_adc;
+int valor_pwm;
+
+void main()
+{
+   setup_timer_2(t2_div_by_16, 255, 1);
+   setup_ccp1(ccp_pwm);
+   setup_adc_ports(AN0);
+   setup_adc(adc_clock_internal);
+   
+   while(true)
+   {
+      set_adc_channel(0);
+      delay_us(2);
+      valor_adc = read_adc();
+      valor_pwm = valor_adc / 4;
+      set_pwm1_duty(valor_pwm);
+   }
+}

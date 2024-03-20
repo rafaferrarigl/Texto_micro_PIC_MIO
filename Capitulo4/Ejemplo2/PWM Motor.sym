@@ -1,0 +1,143 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-021 valor_adc
+022     valor_pwm
+023     porcentaje
+024     @TRIS_C
+025     @PSTRINGCN7_635.P1
+025     @PRINTF_U_635.P2
+025-028 @SFTOI.P3
+025     lcd_init.i
+025-026 @ITOF.P1
+025     MAIN.@SCRATCH1
+026     @PRINTF_U_635.P1
+026     lcd_init.@SCRATCH1
+026     MAIN.@SCRATCH2
+026     @PSTRINGCN7_635.@SCRATCH1
+027     @DIV88.P1
+027     MAIN.@SCRATCH3
+027     @PSTRINGCN7_635.@SCRATCH2
+028     @DIV88.P1
+028     MAIN.@SCRATCH4
+028     @PSTRINGCN7_635.@SCRATCH3
+029     lcd_putc.c
+029-02C map.valor
+029     @PSTRINGCN7_635.@SCRATCH4
+029     @DIV88.@SCRATCH1
+02A     lcd_gotoxy.x
+02A     @delay_ms1.P1
+02B     lcd_gotoxy.y
+02C     lcd_gotoxy.address
+02D-030 map.entradaMin
+02D     lcd_gotoxy.@SCRATCH1
+02E     lcd_send_byte.address
+02F     lcd_send_byte.n
+030     lcd_send_byte.@SCRATCH1
+031     lcd_send_nibble.nibble
+031-034 map.entradaMax
+035-038 map.salidaMin
+039-03C map.salidaMax
+03D     map.@SCRATCH1
+03E     map.@SCRATCH2
+03F     map.@SCRATCH3
+040     map.@SCRATCH4
+041-044 @MULFF.P1
+041-044 @ADDFF.P2
+041-044 @DIVFF.P3
+045-048 @ADDFF.P1
+045-048 @DIVFF.P2
+045-048 @MULFF.P3
+049     @ADDFF.@SCRATCH1
+049     @MULFF.@SCRATCH1
+049     @DIVFF.@SCRATCH1
+04A     @ADDFF.@SCRATCH2
+04A     @MULFF.@SCRATCH2
+04A     @DIVFF.@SCRATCH2
+04B     @ADDFF.@SCRATCH3
+04B     @MULFF.@SCRATCH3
+04B     @DIVFF.@SCRATCH3
+04C     @ADDFF.@SCRATCH4
+04C     @MULFF.@SCRATCH4
+04C     @DIVFF.@SCRATCH4
+04D     @ADDFF.@SCRATCH5
+04D     @MULFF.@SCRATCH5
+04D     @DIVFF.@SCRATCH5
+04E     @ADDFF.@SCRATCH6
+04E     @DIVFF.@SCRATCH6
+04F     @ADDFF.@SCRATCH7
+050     @ADDFF.@SCRATCH8
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const641.call
+00000D  @const694.call
+000012  @const703.call
+00001B  @delay_ms1
+00002F  lcd_send_nibble
+00005D  lcd_send_byte
+000084  lcd_init
+0000B3  @ITOF
+0000D0  @ADDFF
+000211  map
+00024D  @MULFF
+0002EB  @DIVFF
+0003CF  @SFTOI
+0003EE  lcd_gotoxy
+000400  lcd_putc
+000424  @PSTRINGCN7_635
+00047B  @DIV88
+000490  @PRINTF_U_635
+0004C5  MAIN
+0004C5  @cinit1
+0004D1  @cinit2
+
+Project Directory:
+    C:\Users\CQ43\Documents\Curso Pic CCS\21-30\PWM\PWM Motor\
+
+Project Files:
+    PWM Motor.c                                             [27-jun-20 14:20  CRC=3D2EA18C]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [12-nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD_16X2.c [19-jun-20 20:32  CRC=F406DE8D]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\map_function.c [07-jul-20 23:44  CRC=B1468B9D]
+
+Source signature=14F5DF5B
+
+Units:
+    PWM Motor (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   PWM Motor.xsym
+    Errors:      PWM Motor.err
+    Ext Symbols: PWM Motor.esym
+    INHX8:       PWM Motor.hex
+    Symbols:     PWM Motor.sym
+    List:        PWM Motor.lst
+    Debug/COFF:  PWM Motor.cof
+    Project:     PWM Motor.ccspjt
+    Call Tree:   PWM Motor.tre
+    Statistics:  PWM Motor.STA

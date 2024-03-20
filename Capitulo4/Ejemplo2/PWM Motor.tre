@@ -1,0 +1,64 @@
+ÀÄPWM Motor
+   ÀÄMAIN  0/238  Ram=4
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄlcd_init  0/47  Ram=2
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ÃÄ@const621  0/8  Ram=0
+      ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³  ³  ÃÄlcd_send_nibble  0/46  Ram=1
+      ³  ³  ÀÄlcd_send_nibble  0/46  Ram=1
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄ@ITOF  0/29  Ram=2
+      ÃÄmap  0/446  Ram=24
+      ³  ÃÄ@ADDFF  0/321  Ram=16
+      ³  ÃÄ@ADDFF  0/321  Ram=16
+      ³  ÃÄ@MULFF  (Inline)  Ram=13
+      ³  ÃÄ@ADDFF  0/321  Ram=16
+      ³  ÃÄ@DIVFF  (Inline)  Ram=14
+      ³  ÀÄ@ADDFF  0/321  Ram=16
+      ÃÄ@SFTOI  0/31  Ram=4
+      ÃÄ@ITOF  0/29  Ram=2
+      ÃÄmap  0/446  Ram=24
+      ³  ÀÄ*
+      ÃÄ@SFTOI  0/31  Ram=4
+      ÃÄlcd_gotoxy  0/18  Ram=4
+      ³  ÀÄlcd_send_byte  0/39  Ram=3
+      ³     ÀÄ*
+      ÃÄ@PSTRINGCN7_635  0/87  Ram=5
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ³  ÃÄlcd_gotoxy  0/18  Ram=4
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÃÄlcd_send_byte  0/39  Ram=3
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÀÄlcd_send_byte  0/39  Ram=3
+      ³  ³     ÀÄ*
+      ³  ÀÄlcd_putc  0/36  Ram=1
+      ³     ÀÄ*
+      ÃÄ@PRINTF_U_635  0/53  Ram=2
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÃÄlcd_putc  0/36  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄlcd_putc  0/36  Ram=1
+      ³     ÀÄ*
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÃÄlcd_gotoxy  0/18  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGCN7_635  0/87  Ram=5
+      ³  ÀÄ*
+      ÃÄ@PRINTF_U_635  0/53  Ram=2
+      ³  ÀÄ*
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÃÄlcd_putc  0/36  Ram=1
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/20  Ram=1

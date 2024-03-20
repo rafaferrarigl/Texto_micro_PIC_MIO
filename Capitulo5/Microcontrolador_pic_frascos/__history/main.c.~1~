@@ -1,0 +1,33 @@
+#include <16f877.h>
+#device ADC = 10
+#FUSES XT, NOWDT
+#use delay(clock=20M)
+#use standard_io(D)
+
+#define LCD_DB4   PIN_D4         
+#define LCD_DB5   PIN_D5
+#define LCD_DB6   PIN_D6
+#define LCD_DB7   PIN_D7
+#define LCD_RS    PIN_D2
+#define LCD_E     PIN_D3
+
+
+#include <lcd.c>            // Libreria para el manejo de la pantalla LCD
+#include "map_function.c" 
+
+
+float valor_adc;
+float valor_peso;
+
+void main()
+{
+	lcd_init();
+	lcd_gotoxy(1,1);
+    printf("asdasdadad");
+    
+	while(TRUE)
+	{
+		//TODO: User Code
+	}
+
+}

@@ -1,0 +1,147 @@
+CCS PCM C Compiler, Version 5.015, 5967               21-jun-20 20:14
+
+               Filename:   C:\Users\CQ43\Documents\Curso Pic CCS\Timer 1\Timer 1.lst
+
+               ROM used:   93 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   12 (3%) at main() level
+                           12 (3%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   03F
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  MOVLW  8C
+0018:  MOVWF  04
+0019:  BTFSS  00.0
+001A:  GOTO   01D
+001B:  BTFSC  0C.0
+001C:  GOTO   02E
+001D:  MOVF   22,W
+001E:  MOVWF  04
+001F:  MOVF   23,W
+0020:  MOVWF  77
+0021:  MOVF   24,W
+0022:  MOVWF  78
+0023:  MOVF   25,W
+0024:  MOVWF  79
+0025:  MOVF   26,W
+0026:  MOVWF  7A
+0027:  MOVF   20,W
+0028:  MOVWF  0A
+0029:  SWAPF  21,W
+002A:  MOVWF  03
+002B:  SWAPF  7F,F
+002C:  SWAPF  7F,W
+002D:  RETFIE
+002E:  BCF    0A.3
+002F:  BCF    0A.4
+0030:  GOTO   031
+.................... #include <16f877a.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOPUT,NOLVP,BROWNOUT 
+.................... #use delay(clock=20M) 
+.................... #use standard_io(B) 
+....................  
+.................... #INT_TIMER1 
+.................... void timer1_interrupcion() 
+.................... { 
+....................    output_toggle(PIN_B0); 
+0031:  BSF    03.5
+0032:  BCF    06.0
+0033:  MOVLW  01
+0034:  BCF    03.5
+0035:  XORWF  06,F
+....................    set_timer1(3036); 
+0036:  CLRF   0E
+0037:  MOVLW  0B
+0038:  MOVWF  0F
+0039:  MOVLW  DC
+003A:  MOVWF  0E
+003B:  BCF    0C.0
+003C:  BCF    0A.3
+003D:  BCF    0A.4
+003E:  GOTO   01D
+.................... } 
+....................  
+.................... void main() 
+003F:  MOVF   03,W
+0040:  ANDLW  1F
+0041:  MOVWF  03
+0042:  BSF    03.5
+0043:  BSF    1F.0
+0044:  BSF    1F.1
+0045:  BSF    1F.2
+0046:  BCF    1F.3
+0047:  MOVLW  07
+0048:  MOVWF  1C
+0049:  BCF    03.7
+.................... { 
+....................    setup_timer_1(T1_INTERNAL | T1_DIV_BY_8); 
+004A:  MOVLW  B5
+004B:  BCF    03.5
+004C:  MOVWF  10
+....................    enable_interrupts(INT_TIMER1); 
+004D:  BSF    03.5
+004E:  BSF    0C.0
+....................    enable_interrupts(GLOBAL); 
+004F:  MOVLW  C0
+0050:  BCF    03.5
+0051:  IORWF  0B,F
+....................    set_timer1(3036); 
+0052:  CLRF   0E
+0053:  MOVLW  0B
+0054:  MOVWF  0F
+0055:  MOVLW  DC
+0056:  MOVWF  0E
+....................    output_high(PIN_B0); 
+0057:  BSF    03.5
+0058:  BCF    06.0
+0059:  BCF    03.5
+005A:  BSF    06.0
+....................     
+....................    while(true) 
+....................    { 
+005B:  GOTO   05B
+....................        
+....................    } 
+.................... } 
+005C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F7A   HS NOWDT NOPUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

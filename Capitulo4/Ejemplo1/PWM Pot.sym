@@ -1,0 +1,105 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-021 valor_adc
+022     valor_pwm
+023     @TRIS_C
+024-025 @ITOF.P1
+024-027 @SFTOI.P2
+024     MAIN.@SCRATCH1
+025     MAIN.@SCRATCH2
+026     MAIN.@SCRATCH3
+027     MAIN.@SCRATCH4
+028-02B map.valor
+02C-02F map.entradaMin
+030-033 map.entradaMax
+034-037 map.salidaMin
+038-03B map.salidaMax
+03C     map.@SCRATCH1
+03D     map.@SCRATCH2
+03E     map.@SCRATCH3
+03F     map.@SCRATCH4
+040-043 @MULFF.P1
+040-043 @ADDFF.P2
+040-043 @DIVFF.P3
+044-047 @DIVFF.P1
+044-047 @ADDFF.P2
+044-047 @MULFF.P3
+048     @ADDFF.@SCRATCH1
+048     @MULFF.@SCRATCH1
+048     @DIVFF.@SCRATCH1
+049     @ADDFF.@SCRATCH2
+049     @MULFF.@SCRATCH2
+049     @DIVFF.@SCRATCH2
+04A     @ADDFF.@SCRATCH3
+04A     @MULFF.@SCRATCH3
+04A     @DIVFF.@SCRATCH3
+04B     @ADDFF.@SCRATCH4
+04B     @MULFF.@SCRATCH4
+04B     @DIVFF.@SCRATCH4
+04C     @ADDFF.@SCRATCH5
+04C     @MULFF.@SCRATCH5
+04C     @DIVFF.@SCRATCH5
+04D     @ADDFF.@SCRATCH6
+04D     @DIVFF.@SCRATCH6
+04E     @ADDFF.@SCRATCH7
+04F     @ADDFF.@SCRATCH8
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @ITOF
+000023  @ADDFF
+000164  map
+0001A0  @MULFF
+00023E  @DIVFF
+000324  @SFTOI
+000345  MAIN
+000345  @cinit1
+000351  @cinit2
+
+Project Directory:
+    C:\Users\CQ43\Documents\Curso Pic CCS\21-30\PWM\PWM Pot\
+
+Project Files:
+    PWM Pot.c                                               [07-jul-20 23:34  CRC=741A6FF3]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [12-nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\map_function.c [07-jul-20 23:29  CRC=0D86A4D1]
+
+Source signature=105B019D
+
+Units:
+    PWM Pot (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   PWM Pot.xsym
+    Errors:      PWM Pot.err
+    Ext Symbols: PWM Pot.esym
+    INHX8:       PWM Pot.hex
+    Symbols:     PWM Pot.sym
+    List:        PWM Pot.lst
+    Debug/COFF:  PWM Pot.cof
+    Project:     PWM Pot.ccspjt
+    Call Tree:   PWM Pot.tre
+    Statistics:  PWM Pot.STA

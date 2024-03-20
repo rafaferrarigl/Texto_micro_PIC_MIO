@@ -1,0 +1,101 @@
+#include <16f877a.h>
+#device ADC = 10
+#FUSES XT, NOWDT
+#use delay(clock=2M)
+#use standard_io(D)
+             
+
+#define LCD_DB4   PIN_D4         
+#define LCD_DB5   PIN_D5
+#define LCD_DB6   PIN_D6
+#define LCD_DB7   PIN_D7
+#define LCD_RS    PIN_D1
+#define LCD_E     PIN_D0
+
+#BYTE OPTION_REG = 0x81
+
+#include <lcd.c>            
+int i=0;
+float valor_adc;
+float valor_peso;
+/*
+#INT_EXT
+
+void ext_isr() {
+
+   output_low(PIN_B2);
+   output_high(PIN_B3);
+   Setup_timer_1 (T1_INTERNAL | T1_DIV_BY_8);   //Configuraci�n timer1
+   set_timer1 (15536);                           //Carga del timer1 para 0,1 s
+   enable_interrupts(INT_TIMER1);    // Enable timer1 interrupt
+
+
+
+
+}
+
+#int_TIMER1   
+void TIMER1_isr(void) {
+   
+   set_timer1(15536); // Reset timer to get 400ms delay
+   //output_low(PIN_B3);
+   if (i<3)  i++;
+   else {
+      i=0;
+      valor_adc = read_adc ();
+      
+      if(valor_adc > 1000) {
+         
+         output_low(PIN_B3);
+         //output_high(PIN_B2);
+         Setup_timer_1 (T1_DISABLED);
+      
+   }
+      
+   }
+   
+   
+
+   
+  
+  
+}
+
+*/
+
+
+void main()
+{ 
+   
+                    //poner puerto D como salidas
+                   
+
+   lcd_init();  
+   
+   /*
+   bit_clear(OPTION_REG, 7);     
+   enable_interrupts(int_ext);   
+   ext_int_edge(H_to_L);       
+   enable_interrupts(GLOBAL);   
+
+   setup_adc_ports(ALL_ANALOG);
+   setup_adc(ADC_CLOCK_INTERNAL);
+   set_adc_channel(0);
+   */
+      
+   output_low(PIN_B3);
+   output_high(PIN_B2);
+   lcd_gotoxy(1,2);
+   printf(lcd_putc,"Maada" );
+   lcd_gotoxy(1,2);
+   printf(lcd_putc,"Maada" );
+         
+
+
+   while(TRUE)
+   {
+     
+      delay_ms(10000);
+   }
+
+}
